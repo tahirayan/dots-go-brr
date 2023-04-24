@@ -21,3 +21,18 @@ wrappers.forEach((item, i) => {
 
   window.main.appendChild(item);
 });
+
+let main = document.getElementById('main');
+let dots = document.querySelectorAll('.dot');
+
+const setBg = () => {
+  const randomColor = Math.floor(Math.random()*16777215).toString(16);
+  document.body.style.backgroundColor = "#" + randomColor;
+  main.style.backgroundColor = "#" + randomColor;
+  dots.forEach((dot) => {
+    dot.style.backgroundColor = "#" + randomColor;
+  })
+}
+
+main.addEventListener("click", setBg);
+setBg();
